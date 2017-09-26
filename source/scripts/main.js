@@ -45,18 +45,18 @@ function scrollToDiv(div) {
 	var timer = setInterval(function() {
 		var diff = upper - tick;
 		if(diff > 0) {
-			tick += 10;
+			tick++;
 			window.scrollTo(0, tick);
-			if(diff <= 10)
+			if(diff <= 1)
 				clearInterval(timer);
 		}
 		else if(diff < 0) {
-			tick -= 10;
+			tick--;
 			window.scrollTo(0, tick);
-			if(diff >= -10)
+			if(diff >= -1)
 				clearInterval(timer);
 		}
-	}, .1);
+	}, .01);
 }
 
 function findElement() {
