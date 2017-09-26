@@ -5,7 +5,7 @@ var header = document.getElementsByClassName("header")[0];
 document.addEventListener('scroll', function() {
 	header.style.height = "7%";
 	header.style.fontSize = "120%";
-	if(window.scrollY < 10) {
+	if(window.scrollY < 5) {
 		header.style.height = "10%";
 		header.style.fontSize = "150%";
 	}
@@ -45,15 +45,15 @@ function scrollToDiv(div) {
 	var timer = setInterval(function() {
 		var diff = upper - tick;
 		if(diff > 0) {
-			tick++;
+			tick += 5;
 			window.scrollTo(0, tick);
-			if(diff <= 1)
+			if(diff <= 5)
 				clearInterval(timer);
 		}
 		else if(diff < 0) {
-			tick--;
+			tick -= 5;
 			window.scrollTo(0, tick);
-			if(diff >= -1)
+			if(diff >= -5)
 				clearInterval(timer);
 		}
 	}, .01);
