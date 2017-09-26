@@ -4,12 +4,111 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://use.fontawesome.com/925368d7c4.js"></script>
     <title>MP1 Starter</title>
 </head>
 
 <body>
+	<div class="header">
+		<span class="title"><i id="ball" class="fa fa-futbol-o"></i>SOCCER</span>
+		<span class="tabs" id="about_link">ABOUT</span>
+		<span class="tabs" id="field_link">FIELD</span>
+		<span class="tabs" id="rules_link">RULES</span>
+		<span class="tabs" id="positions_link">POSITIONS</span>
+	</div>
 
-    <h2>Welcome to MP1!</h2>
+	<div class="main" id="main">
+    	<video autoplay loop>
+    		<source src="assets/soccer.mp4" type="video/mp4">
+    	</video>
+    	<h1>The Game of Soccer</h1>
+    </div>
+
+    <div class="about" id="about">
+    	<h1>About</h1>
+    	<p>Soccer is a sport that consists of teams of 11 players per side. The objective of the games is to try to get the soccer ball into the opposing teams net. Each player has a position on their respective teams. The winner is determined by the number of goals scored in one 90 minute game.</p>
+    	<div class="slideshow">
+    		<div class="slides move">
+    			<img src="assets/goal.jpg">
+    		</div>
+    		<div class="slides move">
+    			<img src="assets/pass.jpg">
+    		</div>
+    		<div class="slides move">
+    			<img src="assets/team.jpg">
+    		</div>
+    		<a id="prev">&#10094;</a>
+    		<a id="next">&#10095;</a>
+    	</div>
+    </div>
+
+    <div class="field" id="field">
+    	<h1>The Field</h1>
+    </div>
+
+    <div class="rules" id="rules">
+    	<h1>Rules</h1>
+    	<div class="tables">
+	    	<div class="rule">
+	    		<h2>Start</h2>
+	    		<p>Each team must start on their own respective side. 11 players must be on the field at the start of the game. Kick-off begins when the ball is kicked forward across the halfway line.</p>
+	    	</div>
+	    	<div class="rule">
+	    		<h2>Play</h2>
+	    		<p>There are two 45 minute halves. Players can pass, dribble, or shoot at the opposing teams goal. There are attackers and defenders for each team. Attackers try to score the ball, while defenders try to prevent being scored on.</p>
+	    	</div>
+	    	<div class="rule">
+	    		<h2>Foul</h2>
+	    		<p>There are yellow cards for minor fouls such as hard tackles or hard shoves. Red cards are given when the foul is severe or when a player gets two yellow cards.</p>
+	    	</div>
+	    </div>
+    </div>
+
+    <div class="positions" id="positions">
+    	<div class="tables" id="position_table">
+    		<div class="position" id="forward">
+    			<h1>Forward</h1>
+    			<img src="assets/forward.jpg">
+    		</div>
+    		<div class="position" id="midfield">
+    			<h1>Midfielder</h1>
+    			<img src="assets/midfielder.jpg">
+    		</div>
+    		<div class="position" id="defend">
+    			<h1>Defender</h1>
+    			<img src="assets/defender.jpg">
+    		</div>
+    		<div class="position" id="goalie">
+    			<h1>Goalie</h1>
+    			<img src="assets/goalie.jpg">
+    		</div>
+    	</div>
+    	<div class="modal" id="modal">
+    		<div class="content">
+    			<span class="close" id="fwd">&times;</span>
+    			<p>The player who scores goals, holds the ball in the attacking half, and creates goal-scoring opportunities.</p>
+    		</div>
+    		<div class="content">
+    			<span class="close" id="mid">&times;</span>
+    			<p>The player who distributes the ball from the defending half to the attacking half. This player is important in moving the ball around the field.</p>
+    		</div>
+    		<div class="content">
+    			<span class="close" id="def">&times;</span>
+    			<p>The player who prevents the opposing team from getting the ball from the defending half. They usually try to clear the ball to the midfield or forward.</p>
+    		</div>
+    		<div class="content">
+    			<span class="close" id="gk">&times;</span>
+    			<p>The player who guards the goal. They can use their hands to catch shots or parry shots at goal. Has the important role of being the last line of defense.</p>
+    		</div>
+    	</div>
+    </div>
+
+    <div class="footer">
+    	<a href="https://www.linkedin.com"><i class="fa fa-linkedin-square"></i></a>
+        <a href="https://www.github.com"><i class="fa fa-github-square"></i></a>
+        <a href="https://www.facebook.com"><i class="fa fa-facebook-square"></i></a>
+        <a href="https://www.instagram.com"><i class="fa fa-instagram"></i></a>
+    </div>
 
     <script src="bundle.js" type="text/javascript"></script>
 </body>

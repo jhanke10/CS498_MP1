@@ -1,0 +1,293 @@
+$color_one: #444E5E;
+$color_two: #72A8FF;
+
+@mixin center_div {
+	display: flex;
+	align-items: center;
+}
+
+@mixin animate($name, $duration) {
+	-webkit-animation: $name $duration;
+    -moz-animation: $name $duration;
+    -ms-animation: $name $duration;
+    -o-animation: $name $duration;
+	animation: $name $duration;
+}
+
+@mixin spacing {
+	margin: auto;
+	margin-bottom: 2%;
+}
+
+@mixin spacing2($val) {
+	margin-right: $val;
+	margin-left: $val;
+}
+
+@mixin spacing3($val) {
+	margin-top: $val;
+	margin-bottom: $val;
+}
+
+@mixin background-size {
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+@mixin center_div2 {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+* {
+	box-sizing:border-box
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+.header { 
+	@include center_div;
+	background: $color_one;
+	width: 100%;
+	height: 10%;
+	position: fixed;
+	color: white;
+	font-size: 150%;
+	flex-flow: row wrap;
+	justify-content: space-between;
+  	z-index: 2;
+  	transition: height .4s;
+  	transition: font-size .2s;
+}
+
+#ball {
+	@include spacing2(1%);
+}
+
+.title {
+	cursor: pointer;
+	width: 60%;
+}
+
+.tabs {
+	cursor: pointer;
+	margin-right: 1%;
+	right: 2%;
+	transition: border .2s;
+}
+
+a {
+	color: white;
+	text-decoration: none;
+}
+
+.main {
+	width: 100%;
+	height: 100vh;
+	text-align: center;
+	background: black;
+	color: white;
+	position: relative;
+	h1 {
+		@include animate(fade, 4s);
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 65%;
+		z-index: 1;
+		font-size: 400%;
+	}
+}
+
+video {
+	width: 60%;
+	height: 100%;
+	z-index: -1;
+}
+
+@keyframes fade {
+	from {opacity: 0;}
+	to {opacity: 1;}
+}
+
+.about {
+	text-align: center;
+	width: 100%;
+	p {
+		@include spacing;
+		width: 80%;
+		display: block;
+	}
+}
+
+.slideshow {
+	@include spacing;
+	width: 70%;
+	position: relative;
+	text-align: left;
+	overflow: hidden;
+}
+
+#prev, #next {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	font-size: 200%;
+	transform: translateY(-50%);
+	padding: 2%;
+	width: auto;
+	color: white;
+	z-index: 1;
+}
+
+#next {
+	right: 0;
+}
+
+.slides img {
+	width: 100%;
+	height: 70vh;
+}
+
+.move {
+	 animation-name: move;
+	 animation-duration: 2s;
+}
+
+@keyframes move {
+	from {opacity: 0.2}
+	to {opacity: 1}
+}
+
+.field {
+	width: 100%;
+	height: 100vh;
+	background: url('assets/field.svg') no-repeat fixed center center;
+	@include background-size;
+	color: white;
+	position: relative;
+	text-align: center;
+	h1 {
+		width: 100%;
+		position: absolute;
+		top: 40%;
+		tranform: translateY(-50%);
+		font-size: 350%;
+		text-shadow: 2px 2px black;
+	}
+}
+
+.rules {
+	text-align: center;
+	padding-top: 2%;
+	background: $color_two;
+	h1 {
+		font-size: 300%;
+	}
+}
+
+.tables {
+	@include center_div;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+}
+
+.rule {
+	border: 1px solid black;
+	width: 30%;
+	min-width: 300px;
+	height: 35vh;
+	margin-bottom: 5%;
+	font-size: 130%;
+}
+
+.positions {
+	background: white;
+	text-align: center;
+	color: black;
+	position: relative;
+	overflow: hidden;
+	#label {
+		font-size: 300%;
+	}
+}
+
+#position_table {
+	height: 100%;
+}
+
+.position {
+	@include spacing3(5%);
+	border: 1px solid black;
+	width: 20%;
+	min-width: 200px;
+	height: 40vh;
+	cursor: pointer;
+	img {
+		height: 60%;
+	}
+}
+
+.position:hover {
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.close {
+	cursor: pointer;
+	font-size: 200%;
+	float: right;
+	margin-right: 2%;
+}
+
+.modal {
+	position: absolute;
+	top: 0%;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.6);
+	display: none;
+}
+
+.content {
+	@include center_div2;
+	width: 60%;
+	height: 15%;
+	background: white;
+	display: none;
+}
+
+.footer {
+	background: $color_one;
+	width: 100%;
+	height: 10vh;
+	@include center_div;
+	justify-content: center;
+	a {
+		height: 50%;
+		@include spacing2(1%);
+		font-size: 200%;
+	}
+}
+
+@media screen and (max-height: 600px) {
+	.rule {
+		height: 40vh;
+	}
+}
+
+@media screen and (max-height: 800px) {
+	.header {
+		font-size: 90%;
+	}
+
+	.title {
+		width: 35%;
+	}
+}
