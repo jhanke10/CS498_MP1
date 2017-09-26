@@ -1,5 +1,5 @@
-var index = 0;
-showSlide(index);
+var index = 1;
+showSlide();
 
 var header = document.getElementsByClassName("header")[0];
 document.addEventListener('scroll', function() {
@@ -82,29 +82,32 @@ function findElement() {
 
 var prev = document.getElementById("prev");
 prev.addEventListener('click', function() {
-	index -= 1;
-	showSlide(index);
+	var curr_slide = document.getElementsByClassName("slides")[index];
+	var right_slide = document.getElementsByClassName("slides")[(index+2)%3];
+	var left_slide = document.getElementsByClassName("slides")[(index+1)%3];
+	curr_slide.className = "slides right";
+	left_slide.className = "slides";
+	right_slide.className = "slides left-hidden";
+	index = (index+1) % 3;
 });
 
 var next = document.getElementById("next");
 next.addEventListener('click', function() {
-	index += 1;
-	showSlide(index);
+	var curr_slide = document.getElementsByClassName("slides")[index];
+	var right_slide = document.getElementsByClassName("slides")[(index+2)%3];
+	var left_slide = document.getElementsByClassName("slides")[(index+1)%3];
+	curr_slide.className = "slides left";
+	right_slide.className = "slides";
+	left_slide.className = "slides right-hidden";
+	index = (index+2) % 3;
 });
 
-function showSlide(n) {
+function showSlide() {
 	var i;
 	var slide = document.getElementsByClassName("slides");
-	if (n > slide.length-1) {
-		index = 0;
-	}
-	if (n < 0) {
-		index = slide.length-1;
-	}
-	for (i = 0; i < slide.length; i++) {
-		slide[i].style.display = "none";
-	}
-	slide[index].style.display = "block";
+	slide[0].className = "slides right-hidden";
+	slide[1].className = "slides";
+	slide[2].className = "slides left-hidden";
 }
 
 var modal = document.getElementById("modal");
