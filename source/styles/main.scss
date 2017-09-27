@@ -8,9 +8,9 @@ $color_two: #72A8FF;
 
 @mixin animate($name, $duration) {
 	-webkit-animation: $name $duration;
-    -moz-animation: $name $duration;
-    -ms-animation: $name $duration;
-    -o-animation: $name $duration;
+    	-moz-animation: $name $duration;
+    	-ms-animation: $name $duration;
+    	-o-animation: $name $duration;
 	animation: $name $duration;
 }
 
@@ -31,9 +31,9 @@ $color_two: #72A8FF;
 
 @mixin background-size {
 	-webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    	-moz-background-size: cover;
+    	-o-background-size: cover;
+    	background-size: cover;
 }
 
 @mixin center_div2 {
@@ -302,28 +302,28 @@ video {
 	}
 }
 
-@media screen and (min-width: 1920px) {
+@media only screen and (min-width: 1920px) {
 	.rule {
 		height: 30vh;
 		font-size: 150%;
 	}
 }
 
-@media screen and (min-width: 1366px) {
+@media only screen and (min-width: 1366px) {
 	.rule {
 		height: 30vh;
 		font-size: 130%;
 	}
 }
 
-@media screen and (min-width: 1280px) {
+@media only screen and (min-width: 1280px) {
 	.rule {
 		height: 30vh;
 		font-size: 120%;
 	}
 }
 
-@media screen and (min-width: 1024px) {
+@media only screen and (min-width: 1024px) {
 	.rule {
 		height: 30vh;
 		font-size: 110%;
