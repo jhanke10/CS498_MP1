@@ -1,11 +1,14 @@
+/* http://sass-lang.com/guide */
 $color_one: #444E5E;
 $color_two: #72A8FF;
 
+/* https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
 @mixin center_div {
 	display: flex;
 	align-items: center;
 }
 
+/* https://stackoverflow.com/questions/20518670/css-keyframe-animations-for-all-browsers */
 @mixin animate($name, $duration) {
 	-webkit-animation: $name $duration;
     	-moz-animation: $name $duration;
@@ -271,6 +274,7 @@ video {
 	margin-right: 2%;
 }
 
+/* https://www.w3schools.com/howto/howto_css_modals.asp */
 .modal {
 	position: absolute;
 	top: 0%;

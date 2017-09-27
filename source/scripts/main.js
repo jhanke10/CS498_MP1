@@ -110,6 +110,7 @@ function showSlide() {
 	slide[2].className = "slides left-hidden";
 }
 
+//https://www.w3schools.com/howto/howto_css_modals.asp
 var modal = document.getElementById("modal");
 var close;
 var forward = document.getElementsByClassName("position")[0];
